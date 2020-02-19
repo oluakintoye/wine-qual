@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        Alcohol:
+        <input name="alcohol" type="float" value="14.23" required>
+        <br>
+        <br> Malic Acid:
+        <input name="malic_acid" type="float" value="1.71" required>
+        <br>
+        <br> Ash:
+        <input name="ash" type="float" value="2.43" required>
+        <br>
+        <br>
+        Alcalinity of ash:
+        <input name="alcalinity_of_ash" type="float" value="15.6" required>
+        <br>
+        <br> Magnesium:
+        <input name="magnesium" type="float" value="127.0" required>
+        <br>
+        <br> Total Phenols:
+        <input name="total_phenols" type="float" value="2.80" required>
+        <br>
+        <br>
+        Flavanoids:
+        <input name="flavanoids" type="float" value="3.06" required>
+        <br>
+        <br> Non-Flavanoid Phenols:
+        <input name="nonflavanoid_phenols" type="float" value="0.28" required>
+        <br>
+        <br> Proanthocyanis:
+        <input name="proanthocyanins" type="float" value="2.29" required>
+        <br>
+        <br>
+        Color Intensity:
+        <input name="color_intensity" type="float"  value="5.64" required>
+        <br>
+        <br> Hue:
+        <input name="hue" type="float" value="1.04" required>
+        <br>
+        <br> Diluted wines:
+        <input name="od280_od315_of_diluted_wines" type="float" value="3.92" required>
+        <br>
+        <br> Proline:
+        <input name="proline" type="float" value="1065.0" required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+    {% if result %}
+        <br> Predicted Quality of Wine:
+           <p style="font-size:50px">{{ result }}</p>
+    {% endif %}
+</div>
+</body>
+</html>
